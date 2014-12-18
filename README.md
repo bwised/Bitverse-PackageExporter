@@ -1,0 +1,8 @@
+This is a Unity3D custom editor tool that helps artists and coders share Unity assets for their projects.  It provides a mechanism to associate a grouping of assets of any kind to an 'Asset Collection' which can be exported out as a Unity package with no coding required.  A project can contain any number of these Asset Collections.  And when the Asset Collection itself is included in the exported Unity package teams can continuosly pass generated packages back and forth as a pseudo-revision control mechanism.  But most importantly, since Unity packages maintain asset linkages (for example, textures remain assigned to materials, import settings of meshes are maintained, etc.) and Asset Collections contain only the files needed for a particular unit of work (for example, all of the artwork and scripts for a Tank) it is a much better approach to sharing work amongst a Unity project's team members (particularly if they are geographally distributed).
+
+To quickly use this tool, navigate to the /dist directory and download one of the built *.unitypackage files and import one into your Unity project.  The PackageExporter-Raw* version contains the source code; the non-Raw version contains DLLs.  The non-Raw/DLL version is easier to share and use amongst team members; in practice, it is recommended to use those distribution files.
+
+This is based off of an internal tool used at Bitwise Design that is a part of its 'Bitverse' system of Unity tools.  This is a functional and free copy of one of the individual tools without any other dependencies.
+
+Current version: 1.0.1
+Author: Ray Graham

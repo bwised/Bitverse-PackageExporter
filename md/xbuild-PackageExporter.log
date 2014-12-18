@@ -1,0 +1,117 @@
+XBuild Engine Version 2.10.9.0
+Mono, Version 2.10.9.0
+Copyright (C) Marek Sieradzki 2005-2008, Novell 2008-2011.
+
+Build started 12/18/2014 8:45:36 AM.
+__________________________________________________
+Project "/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/PackageExporter.sln" (default target(s)):
+	Target ValidateSolutionConfiguration:
+		Building solution configuration "Release|x86".
+	Target Build:
+		Project "/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/PackageExporter.csproj" (default target(s)):
+			Target PrepareForBuild:
+				Configuration: Release Platform: x86
+			Target CopyFilesMarkedCopyLocal:
+				Copying file from '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/libs-unity/UnityEngine.dll' to '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/UnityEngine.dll'
+			Target GenerateSatelliteAssemblies:
+			No input files were specified for target GenerateSatelliteAssemblies, skipping.
+			Target CoreCompile:
+				Tool /Library/Frameworks/Mono.framework/Versions/2.10.9/bin/gmcs execution started with arguments: /noconfig /debug- /optimize- /out:obj/x86/Release/PackageExporter.Runtime.dll ../unity/Assets/Tools/Bitverse/PackageExporter/Scripts/AssetCollection.cs /target:library /platform:x86 /reference:libs-unity/UnityEngine.dll /reference:/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/2.0/mscorlib.dll /reference:/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/2.0/System.dll /reference:/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/2.0/Mono.Security.dll /warn:4
+			Target DeployOutputFiles:
+				Copying file from '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/obj/x86/Release/PackageExporter.Runtime.dll' to '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/PackageExporter.Runtime.dll'
+		Done building project "/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/PackageExporter.csproj".
+		Project "/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/PackageExporterEditor.csproj" (default target(s)):
+			Target PrepareForBuild:
+				Configuration: Release Platform: x86
+			Target ResolveAssemblyReferences:
+/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/3.5/Microsoft.Common.targets:  warning : Reference 'UnityScript, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' not resolved
+				For searchpath /Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/libs-unity
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/libs-unity/UnityScript' as a file, but the file does not exist
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/libs-unity/UnityScript.exe' as a file, but the file does not exist
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/libs-unity/UnityScript.dll' as a file, but the file does not exist
+				For searchpath {CandidateAssemblyFiles}
+				Warning: {CandidateAssemblyFiles} not supported currently
+				For searchpath {HintPathFromItem}
+				HintPath attribute not found
+				For searchpath {TargetFrameworkDirectory}
+				Considered target framework dir /Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/2.0, assembly named 'UnityScript' not found.
+				For searchpath {PkgConfig}
+				Considered UnityScript, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null, but could not find in any pkg-config files.
+				For searchpath {GAC}
+				Considered UnityScript, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null, but could not find in the GAC.
+				For searchpath {RawFileName}
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/UnityScript, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' as a file, but the file does not exist
+				For searchpath bin/Release/
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/UnityScript' as a file, but the file does not exist
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/UnityScript.exe' as a file, but the file does not exist
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/UnityScript.dll' as a file, but the file does not exist
+/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/3.5/Microsoft.Common.targets:  warning : Reference 'Unity.DataContract, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null' not resolved
+				For searchpath /Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/libs-unity
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/libs-unity/Unity.DataContract' as a file, but the file does not exist
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/libs-unity/Unity.DataContract.exe' as a file, but the file does not exist
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/libs-unity/Unity.DataContract.dll' as a file, but the file does not exist
+				For searchpath {CandidateAssemblyFiles}
+				Warning: {CandidateAssemblyFiles} not supported currently
+				For searchpath {HintPathFromItem}
+				HintPath attribute not found
+				For searchpath {TargetFrameworkDirectory}
+				Considered target framework dir /Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/2.0, assembly named 'Unity.DataContract' not found.
+				For searchpath {PkgConfig}
+				Considered Unity.DataContract, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null, but could not find in any pkg-config files.
+				For searchpath {GAC}
+				Considered Unity.DataContract, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null, but could not find in the GAC.
+				For searchpath {RawFileName}
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/Unity.DataContract, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null' as a file, but the file does not exist
+				For searchpath bin/Release/
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/Unity.DataContract' as a file, but the file does not exist
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/Unity.DataContract.exe' as a file, but the file does not exist
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/Unity.DataContract.dll' as a file, but the file does not exist
+/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/3.5/Microsoft.Common.targets:  warning : Reference 'ICSharpCode.NRefactory, Version=3.2.1.6466, Culture=neutral, PublicKeyToken=efe927acf176eea2' not resolved
+				For searchpath /Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/libs-unity
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/libs-unity/ICSharpCode.NRefactory' as a file, but the file does not exist
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/libs-unity/ICSharpCode.NRefactory.exe' as a file, but the file does not exist
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/libs-unity/ICSharpCode.NRefactory.dll' as a file, but the file does not exist
+				For searchpath {CandidateAssemblyFiles}
+				Warning: {CandidateAssemblyFiles} not supported currently
+				For searchpath {HintPathFromItem}
+				HintPath attribute not found
+				For searchpath {TargetFrameworkDirectory}
+				Considered target framework dir /Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/2.0, assembly named 'ICSharpCode.NRefactory' not found.
+				For searchpath {PkgConfig}
+				Considered ICSharpCode.NRefactory, Version=3.2.1.6466, Culture=neutral, PublicKeyToken=efe927acf176eea2, but could not find in any pkg-config files.
+				For searchpath {GAC}
+				Considered ICSharpCode.NRefactory, Version=3.2.1.6466, Culture=neutral, PublicKeyToken=efe927acf176eea2, but could not find in the GAC.
+				For searchpath {RawFileName}
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/ICSharpCode.NRefactory, Version=3.2.1.6466, Culture=neutral, PublicKeyToken=efe927acf176eea2' as a file, but the file does not exist
+				For searchpath bin/Release/
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/ICSharpCode.NRefactory' as a file, but the file does not exist
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/ICSharpCode.NRefactory.exe' as a file, but the file does not exist
+				Considered '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/ICSharpCode.NRefactory.dll' as a file, but the file does not exist
+			Target CopyFilesMarkedCopyLocal:
+				Copying file from '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/libs-unity/UnityEditor.dll' to '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/UnityEditor.dll'
+			Target GenerateSatelliteAssemblies:
+			No input files were specified for target GenerateSatelliteAssemblies, skipping.
+			Target CoreCompile:
+				Tool /Library/Frameworks/Mono.framework/Versions/2.10.9/bin/gmcs execution started with arguments: /noconfig /debug- /optimize- /out:obj/x86/Release/PackageExporter.Editor.dll ../unity/Assets/Tools/Bitverse/PackageExporter/Editor/Module.cs ../unity/Assets/Tools/Bitverse/PackageExporter/Editor/PackageExportCollectionInspector.cs ../unity/Assets/Tools/Bitverse/PackageExporter/Editor/PackageExportCollectionManager.cs /target:library /platform:x86 /reference:libs-unity/UnityEngine.dll /reference:libs-unity/UnityEditor.dll /reference:/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/Glue.Runtime.dll /reference:/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/Glue.Editor.dll /reference:/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release//PackageExporter.Runtime.dll /reference:/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/2.0/mscorlib.dll /reference:/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/2.0/System.dll /reference:/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/2.0/Mono.Security.dll /reference:/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/2.0/System.Core.dll /reference:/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/gac/Mono.Cecil/0.9.4.0__0738eb9f132ed756/Mono.Cecil.dll /reference:/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/2.0/nunit.framework.dll /reference:/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/2.0/System.Xml.dll /reference:/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/gac/Boo.Lang.Compiler/2.0.9.4__32c39770e9a21a67/Boo.Lang.Compiler.dll /reference:/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/gac/Boo.Lang.Parser/2.0.9.4__32c39770e9a21a67/Boo.Lang.Parser.dll /warn:4
+			Target DeployOutputFiles:
+				Copying file from '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/obj/x86/Release/PackageExporter.Editor.dll' to '/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/bin/Release/PackageExporter.Editor.dll'
+		Done building project "/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/PackageExporterEditor.csproj".
+Done building project "/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/PackageExporter.sln".
+
+Build succeeded.
+
+Warnings:
+
+/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/PackageExporter.sln (default targets) ->
+(Build target) ->
+/Users/rgraham/Documents/work-current/bwised/repo/bitverse/github/PackageExporter/md/PackageExporterEditor.csproj (default targets) ->
+/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/3.5/Microsoft.Common.targets (ResolveAssemblyReferences target) ->
+
+	/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/3.5/Microsoft.Common.targets:  warning : Reference 'UnityScript, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' not resolved
+	/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/3.5/Microsoft.Common.targets:  warning : Reference 'Unity.DataContract, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null' not resolved
+	/Library/Frameworks/Mono.framework/Versions/2.10.9/lib/mono/3.5/Microsoft.Common.targets:  warning : Reference 'ICSharpCode.NRefactory, Version=3.2.1.6466, Culture=neutral, PublicKeyToken=efe927acf176eea2' not resolved
+
+	 3 Warning(s)
+	 0 Error(s)
+
+Time Elapsed 00:00:01.9092480

@@ -1,0 +1,5 @@
+export UNITY_VER=4.6.1f1
+export UNITY_DIR=Unity${UNITY_VER}
+export UNITY_PATH=/Applications/${UNITY_DIR}
+export BITVERSE_GLUE_VER=u4.6.1f1-v1.0
+
