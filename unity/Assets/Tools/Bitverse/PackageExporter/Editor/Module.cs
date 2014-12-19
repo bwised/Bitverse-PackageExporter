@@ -5,7 +5,7 @@ namespace Bitverse.PackageExporter.Editor
 {
 	public static class Module
 	{
-		public static string Version = "1.0.1";
+		public static string Version = "1.1";
 
 		#region Actions
 		public static string GetEditorPrefsKey(string key)

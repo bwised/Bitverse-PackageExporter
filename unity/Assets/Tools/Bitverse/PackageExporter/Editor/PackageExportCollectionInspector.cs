@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Bitverse.PackageExporter.Editor
 {
@@ -82,19 +83,28 @@ namespace Bitverse.PackageExporter.Editor
 					if (!AssetDatabase.Contains(objectDraggedIn))
 						continue;
 					
-					// make sure it's not already included
-					bool alreadyInList = false;
-					foreach (Object asset in assetsList)
+					// folder
+					if (AssetIsFolder(objectDraggedIn))
 					{
-						if (asset == objectDraggedIn)
+						Object[] subAssets = GatherAssetsInFolder(objectDraggedIn);
+						if (subAssets.Length > 0)
 						{
-							alreadyInList = true;
-							break;
+							foreach (Object subAsset in subAssets)
+							{
+								if (!(subAsset is AssetCollection) && !AssetIsAlreadyIncluded(subAsset))
+								{
+									assetsToAdd.Add(subAsset);
+								}
+							}
 						}
 					}
 					
-					if (!alreadyInList)
+					// individual asset
+					else if (!AssetIsAlreadyIncluded(objectDraggedIn))
+					{
 						assetsToAdd.Add(objectDraggedIn);
+					}
+
 				}
 				Event.current.Use();
 				break;
@@ -163,21 +173,6 @@ namespace Bitverse.PackageExporter.Editor
 			includeCollectionAsset = EditorGUILayout.Toggle(new GUIContent("Include Collection Asset"), includeCollectionAsset);
 			includeDatetimeInFilename = EditorGUILayout.Toggle(new GUIContent("Date/Time in Filename"), includeDatetimeInFilename);
 			exportPackageOptions = (ExportPackageOptions)EditorGUILayout.EnumMaskField("Export Options", exportPackageOptions);
-			/*
-			switch (exportPackageOptions)
-			{
-			case ExportPackageOptions.Default:
-				break;
-			case ExportPackageOptions.IncludeDependencies:
-				break;
-			case ExportPackageOptions.IncludeLibraryAssets:
-				break;
-			case ExportPackageOptions.Interactive:
-				break;
-			case ExportPackageOptions.Recurse:
-				break;
-			}
-			*/
 			GUILayout.Space(8);
 			if (GUILayout.Button("Create Package"))
 			{
@@ -287,13 +282,6 @@ namespace Bitverse.PackageExporter.Editor
 		private static void DrawIcon(Rect rect, GUIContent content, Object obj)
 		{
 			if (content.image) GUI.DrawTexture(rect, content.image);
-			/*
-			if (GUI.Button(rect, new GUIContent("", content.tooltip), GUIStyle.none))
-			{
-				Selection.objects = new[] { obj };
-				EditorUtility.DisplayPopupMenu(new Rect(Event.current.mousePosition.x, Event.current.mousePosition.y, 0, 0), "Assets/VCS", null);
-			}
-			*/
 		}
 
 		private void CalculateUnincludedDependencies()
@@ -347,6 +335,53 @@ namespace Bitverse.PackageExporter.Editor
 			iconTexture.filterMode = FilterMode.Point;
 			iconTexture.Apply();
 			return iconTexture;
+		}
+
+		private bool AssetIsAlreadyIncluded(Object asset)
+		{
+			bool alreadyInList = false;
+			foreach (Object a in assetsList)
+			{
+				if (a == asset)
+				{
+					alreadyInList = true;
+					break;
+				}
+			}
+			return alreadyInList;
+		}
+		
+		private bool AssetIsFolder(Object asset)
+		{
+			if (AssetDatabase.IsSubAsset(asset))
+				return false;
+			string assetPath = AssetDatabase.GetAssetPath(asset);
+			FileAttributes attr = File.GetAttributes(assetPath);
+			return (attr & FileAttributes.Directory) == FileAttributes.Directory;
+		}
+
+		// pre-condition: "directory" parameter is an asset that is *definitely* a folder
+		private Object[] GatherAssetsInFolder(Object folderAsset)
+		{
+			List<Object> subAssets = new List<Object>();
+			string folderAssetPath = AssetDatabase.GetAssetPath(folderAsset);
+			string applicationDataPath  = Application.dataPath;
+			string folderPath = applicationDataPath.Substring(0 ,applicationDataPath.Length-6) + folderAssetPath;
+			string[] subFilePaths = Directory.GetFiles(folderPath, "*", SearchOption.AllDirectories);
+			if (subFilePaths != null)
+			{
+				foreach (string subFilePath in subFilePaths)
+				{
+					if (subFilePath.EndsWith(".meta"))
+						continue;
+
+					int indexOfAssets = subFilePath.IndexOf("/Assets");
+					string subAssetPath = subFilePath.Substring(indexOfAssets+1);
+					Object asset =  AssetDatabase.LoadAssetAtPath(subAssetPath,typeof(Object));
+					subAssets.Add(asset);
+				}
+			}
+			return subAssets.ToArray();
 		}
 
 		private void ExportPackage()
